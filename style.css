@@ -527,7 +527,7 @@ a { text-decoration: none; color: inherit; }
   .author__inner {
     grid-template-columns: 1fr;
     gap: 0;
-    padding-bottom: 0;
+    padding-bottom: 48px;
     text-align: center;
   }
 
