@@ -157,12 +157,13 @@ a { text-decoration: none; color: inherit; }
 .br-desktop { display: inline; }
 
 .hero__title {
-  font-size: clamp(32px, 4.2vw, 54px);
+  font-size: clamp(30px, 3.4vw, 50px);
   font-weight: 800;
   line-height: 1.18;
   letter-spacing: -.02em;
   margin-bottom: 20px;
   color: var(--text);
+  max-width: 460px;
 }
 .accent { color: var(--green); }
 
