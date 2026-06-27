@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Кейс: Telegram Ads для канала по элитной недвижимости | Максим Денисов</title>
+  <meta name="description" content="1 476 подписчиков по 323 ₽ и 35 заявок для канала по премиум-недвижимости Москвы через Telegram Ads." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .case-hero {
+      background: var(--green);
+      color: #fff;
+      padding: clamp(48px, 7vw, 96px) 0 clamp(40px, 6vw, 72px);
+    }
+    .case-hero__back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 32px;
+      transition: color .2s;
+    }
+    .case-hero__back:hover { color: #fff; }
+    .case-hero__tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+    }
+    .case-hero__title {
+      font-size: clamp(26px, 4vw, 44px);
+      font-weight: 800;
+      line-height: 1.18;
+      letter-spacing: -.02em;
+      max-width: 740px;
+      margin-bottom: 32px;
+    }
+    .case-hero__stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .case-stat {
+      background: rgba(255,255,255,0.14);
+      border-radius: 14px;
+      padding: 18px 24px;
+      min-width: 160px;
+    }
+    .case-stat__num {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .case-stat__label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      font-weight: 500;
+    }
+
+    .case-body {
+      padding: clamp(40px, 6vw, 80px) 0;
+    }
+    .case-layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 48px;
+      align-items: start;
+    }
+    .case-content h2 {
+      font-size: clamp(20px, 2.5vw, 26px);
+      font-weight: 800;
+      color: var(--text);
+      margin: 40px 0 14px;
+      line-height: 1.25;
+    }
+    .case-content h2:first-child { margin-top: 0; }
+    .case-content p {
+      font-size: 16px;
+      line-height: 1.75;
+      color: #374151;
+      margin-bottom: 16px;
+    }
+    .case-content ul {
+      margin: 0 0 20px 0;
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .case-content ul li {
+      display: flex;
+      gap: 10px;
+      font-size: 16px;
+      line-height: 1.65;
+      color: #374151;
+    }
+    .case-content ul li::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      margin-top: 2px;
+      background: var(--green);
+      border-radius: 50%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 10.5l2.8 2.8L14 8' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+    .case-quote {
+      background: var(--green-light);
+      border-left: 4px solid var(--green);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin: 24px 0;
+      font-size: 15px;
+      font-style: italic;
+      color: #1a1a1a;
+      line-height: 1.7;
+    }
+    .case-img {
+      width: 100%;
+      border-radius: 14px;
+      margin: 24px 0;
+      box-shadow: 0 4px 24px rgba(0,0,0,.10);
+    }
+    .case-imgs-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .case-imgs-row img {
+      border-radius: 14px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.10);
+      width: 100%;
+    }
+
+    /* Sidebar */
+    .case-sidebar {
+      position: sticky;
+      top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .sidebar-card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+    }
+    .sidebar-card__title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .sidebar-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+    .sidebar-row:last-child { border-bottom: none; }
+    .sidebar-row__label { color: var(--text-muted); }
+    .sidebar-row__val { font-weight: 700; color: var(--text); text-align: right; }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .result-card {
+      background: var(--green-light);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .result-card__num {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .result-card__label {
+      font-size: 13px;
+      color: #374151;
+      line-height: 1.4;
+    }
+
+    .case-cta {
+      background: var(--green);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      text-align: center;
+      color: #fff;
+    }
+    .case-cta__title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .case-cta__sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .case-cta .btn {
+      background: #fff;
+      color: var(--green);
+      font-weight: 700;
+      width: 100%;
+      justify-content: center;
+    }
+    .case-cta .btn:hover { background: var(--green-light); }
+
+    @media (max-width: 900px) {
+      .case-layout { grid-template-columns: 1fr; }
+      .case-sidebar { position: static; }
+      .case-imgs-row { grid-template-columns: 1fr; }
+      .results-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .case-hero__stats { flex-direction: column; }
+      .case-stat { min-width: unset; }
+      .results-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="container">
+      <a href="index.html" class="case-hero__back">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Назад
+      </a>
+      <div class="case-hero__tag">Telegram Ads · Недвижимость</div>
+      <h1 class="case-hero__title">Telegram Ads для канала по элитной недвижимости Москвы: 1&nbsp;476 подписчиков по 323&nbsp;₽ и 35 заявок</h1>
+      <div class="case-hero__stats">
+        <div class="case-stat">
+          <span class="case-stat__num">1 476</span>
+          <span class="case-stat__label">новых подписчиков</span>
+        </div>
+        <div class="case-stat">
+          <span class="case-stat__num">323 ₽</span>
+          <span class="case-stat__label">стоимость подписчика</span>
+        </div>
+        <div class="case-stat">
+          <span class="case-stat__num">35</span>
+          <span class="case-stat__label">целевых заявок</span>
+        </div>
+        <div class="case-stat">
+          <span class="case-stat__num">3 мес.</span>
+          <span class="case-stat__label">период работы</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BODY -->
+  <section class="case-body">
+    <div class="container">
+      <div class="case-layout">
+
+        <!-- Основной контент -->
+        <div class="case-content">
+
+          <p>Премиум-недвижимость в Москве — ниша, в которой классические performance-каналы перегреты, а аудитория не покупает квартиру за 15+ млн ₽ «с одного клика по объявлению». Здесь не работает реклама в лоб, и здесь не работает широкий охват. Запустил Telegram Ads для канала агента, который ведёт клиентов на первичный рынок премиум- и делюкс-сегмента. В материале — что сработало, что нет, и какие цифры получились за период.</p>
+
+          <p>Этот кейс не о том, «как мы порвали рынок». Нам удалось попасть в стоимость подписчика для «дорогой» ниши с запасом — 323 ₽ против целевых 400 ₽. Об итоговой окупаемости в сделке делать выводы ещё рано. Цикл сделки в премиум-недвижимости длинный.</p>
+
+          <h2>Вводные данные</h2>
+          <p><strong>Клиент</strong> — Telegram-канал агента по недвижимости бизнес-, премиум- и делюкс-класса в Москве.<br>
+          <strong>ГЕО</strong> — Москва.<br>
+          <strong>Продукт</strong> — помощь клиенту в выборе и покупке квартиры на первичном рынке Москвы от 15 млн ₽.<br>
+          <strong>Месячный рекламный бюджет</strong> — 160 000 ₽.<br>
+          <strong>Период работ</strong> — около 3 месяцев (с начала января по конец марта 2026, см. динамику роста канала на скрине).</p>
+
+          <img src="statistika.png" alt="Динамика роста канала" class="case-img" loading="lazy" />
+
+          <div class="case-quote">«Премиум-недвижимость в Telegram Ads — это история не про охват, а про каналы. Демографические таргеты тут второстепенны, главный рычаг — каналы, в которых обитает платёжеспособная аудитория, и оффер, который сразу отсекает нецелевых. Мы изначально шли с пониманием, что нам нужны не просто подписчики, а платежеспособные клиенты.» — Максим Д.</div>
+
+          <h2>Гипотеза и цель</h2>
+          <p>Главная задача — увеличить число обращений в канал и нарастить базу целевой аудитории. Целевая метрика на старте — стоимость целевого подписчика до 400 ₽. Жёсткого срока кампании не было.</p>
+
+          <h2>Как настраивал кампании</h2>
+          <p>Подход к запуску был построен вокруг одного решения — лид-магнитной воронки. От этой точки уже строились тесты офферов и подбор каналов размещения. Креативы, тексты подборок и список каналов пересматривал и обновлял каждые 1–2 недели.</p>
+
+          <h2>Воронка: каталог + бот вместо продающего поста</h2>
+          <p>Оффером стал каталог новостроек на старте продаж от 15 млн ₽. Ценовая планка прямо в креативе работала как фильтр платёжеспособности: те, для кого 15 млн — не реалистичный диапазон, на рекламу просто не реагировали. Таким образом мы отсекали ненужный трафик.</p>
+
+          <p><strong>Механика воронки:</strong></p>
+          <ul>
+            <li>Пользователь видит рекламу с предложением скачать подборку объектов.</li>
+            <li>Подключённый чат-бот выдаёт каталог только после подписки на канал.</li>
+            <li>Подписчик остаётся и в канале, и в базе бота. В бот периодически идёт рассылка с новыми офферами — так собираются дополнительные заявки.</li>
+          </ul>
+
+          <p>Эта связка даёт сразу три вещи: подписчик обходится дешевле рынка, остаётся в базе бота и сразу заходит в воронку касаний до консультации. Один и тот же контакт работает не разово, а постоянно.</p>
+
+          <p>Показы рекламных объявлений настраивал исключительно на каналы по бизнес-, премиум- и делюкс-недвижимости в Москве. Это узкий пул, но это «свой» пул.</p>
+
+          <p>Что не брал в работу — широкие каналы про «недвижимость в целом», ипотеку, новостройки эконом- и комфорт-класса. В премиуме широкий охват — это слив бюджета: дешёвый подписчик из общего канала по квартирам почти не доходит до сделки на 15+ млн.</p>
+
+          <h2>Что по дизайну креативов?</h2>
+          <p>В данном проекте использовал «Премиальный» визуальный стиль — тёмные тона, акцент на стартовых ценах и pre-sale, конкретная ценовая планка прямо в баннере («от 15 млн ₽», «в пределах МКАД»). Текст коротко поясняет, что внутри подборки, и завершается прямым CTA «Скачать файл».</p>
+          <p>Креативы и подборки в этой нише выгорают за 1–2 недели — поэтому обновление визуала и оффера было плановой задачей, а не реакцией на проблему.</p>
+
+          <div class="case-imgs-row">
+            <img src="kreo-1.png" alt="Креатив 1" loading="lazy" />
+            <img src="kreo-2.png" alt="Креатив 2" loading="lazy" />
+          </div>
+
+          <h2>Аналитика и оптимизация</h2>
+          <p>Решения по каналам и креативам принимались на еженедельной основе: добавлял новые каналы, отключал те, что давали дорогих или нерелевантных подписчиков, заменял выгорающие подборки.</p>
+
+          <img src="tablica.png" alt="Таблица аналитики" class="case-img" loading="lazy" />
+
+          <h2>Результаты</h2>
+          <p>За период (~3 месяца):</p>
+
+          <div class="results-grid">
+            <div class="result-card">
+              <span class="result-card__num">+1 476</span>
+              <span class="result-card__label">подписчиков в канал по 323 ₽ — на 50% дешевле рынка</span>
+            </div>
+            <div class="result-card">
+              <span class="result-card__num">37</span>
+              <span class="result-card__label">целевых обращений от трафика с рекламы</span>
+            </div>
+          </div>
+
+          <p>По подписчику — цель выполнена с запасом: +1 476 подписчиков в канал по 323 ₽. В нише элитной недвижимости это на 50% дешевле рынка.</p>
+          <p>За весь период работы удалось получить 37 целевых обращений от трафика с рекламы, не считая людей которые остались в базе канала и бота с отложенным спросом.</p>
+
+        </div>
+
+        <!-- Сайдбар -->
+        <aside class="case-sidebar">
+          <div class="sidebar-card">
+            <div class="sidebar-card__title">О проекте</div>
+            <div class="sidebar-row">
+              <span class="sidebar-row__label">Канал</span>
+              <span class="sidebar-row__val">Элитная недвижимость Москвы</span>
+            </div>
+            <div class="sidebar-row">
+              <span class="sidebar-row__label">Инструмент</span>
+              <span class="sidebar-row__val">Telegram Ads</span>
+            </div>
+            <div class="sidebar-row">
+              <span class="sidebar-row__label">ГЕО</span>
+              <span class="sidebar-row__val">Москва</span>
+            </div>
+            <div class="sidebar-row">
+              <span class="sidebar-row__label">Бюджет/мес</span>
+              <span class="sidebar-row__val">160 000 ₽</span>
+            </div>
+            <div class="sidebar-row">
+              <span class="sidebar-row__label">Период</span>
+              <span class="sidebar-row__val">3 месяца</span>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="sidebar-card__title">Ключевые результаты</div>
+            <div class="sidebar-row">
+              <span class="sidebar-row__label">Подписчиков</span>
+              <span class="sidebar-row__val">+1 476</span>
+            </div>
+            <div class="sidebar-row">
+              <span class="sidebar-row__label">Цена подписчика</span>
+              <span class="sidebar-row__val">323 ₽</span>
+            </div>
+            <div class="sidebar-row">
+              <span class="sidebar-row__label">Целевых заявок</span>
+              <span class="sidebar-row__val">37</span>
+            </div>
+            <div class="sidebar-row">
+              <span class="sidebar-row__label">Экономия vs рынок</span>
+              <span class="sidebar-row__val">−50%</span>
+            </div>
+          </div>
+
+          <div class="case-cta">
+            <div class="case-cta__title">Хотите такой результат?</div>
+            <div class="case-cta__sub">Разберём ваш проект бесплатно</div>
+            <a href="https://t.me/zametkimaksima" class="btn" target="_blank" rel="noopener">
+              Написать в Telegram
+            </a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__name">Максим Денисов</span>
+      <span class="footer__copy">© 2026</span>
+      <a href="https://t.me/maksimbarrister" class="footer__link" target="_blank" rel="noopener">По вопросам сотрудничества</a>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
