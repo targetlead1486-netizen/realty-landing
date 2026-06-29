@@ -11,19 +11,21 @@
   <link rel="stylesheet" href="style.css" />
   <script src="https://api.tgtrack.ru/API/landing_script/v1/?linkID=5c3f9db6ee9f1e&type=ya&counterID=110150350" type="text/javascript" defer></script>
 
-  <!-- Yandex.Metrika counter -->
-  <script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
+  <script>
+    function loadMetrika() {
+      (function(m,e,t,r,i,k,a){
         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
         k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110150350', 'ym');
+      })(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=110150350','ym');
+      ym(110150350,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
+    }
 
-    ym(110150350, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    if (localStorage.getItem('cookie_consent') === 'accepted') {
+      loadMetrika();
+    }
   </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/110150350" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-  <!-- /Yandex.Metrika counter -->
 </head>
 <body>
 
@@ -181,8 +183,38 @@
       <span class="footer__name">Максим Денисов</span>
       <span class="footer__copy">© 2026</span>
       <a href="https://t.me/maksimbarrister" class="footer__link" target="_blank" rel="noopener">По вопросам сотрудничества</a>
+      <a href="/privacy-policy.html" class="footer__link">Политика конфиденциальности</a>
     </div>
   </footer>
+
+  <!-- ───────── COOKIE BANNER ───────── -->
+  <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1a2e1a; color:#fff; padding:16px 24px; box-shadow:0 -4px 24px rgba(0,0,0,0.2);">
+    <div style="max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+      <p style="font-size:14px; line-height:1.5; margin:0; color:#d4e8d4;">
+        Мы используем файлы cookie для аналитики. Подробнее в
+        <a href="/privacy-policy.html" style="color:#a3c9a8; text-underline-offset:3px;">политике конфиденциальности</a>.
+      </p>
+      <div style="display:flex; gap:10px; flex-shrink:0;">
+        <button onclick="cookieDecline()" style="font-family:'Manrope',sans-serif; font-size:13px; font-weight:600; color:#a3c9a8; background:transparent; border:1px solid #3d6b3d; border-radius:8px; padding:8px 16px; cursor:pointer; white-space:nowrap;">Отказаться</button>
+        <button onclick="cookieAccept()" style="font-family:'Manrope',sans-serif; font-size:13px; font-weight:700; color:#fff; background:#1a6b55; border:none; border-radius:8px; padding:8px 20px; cursor:pointer; white-space:nowrap;">Ок</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function cookieAccept() {
+      localStorage.setItem('cookie_consent', 'accepted');
+      document.getElementById('cookie-banner').style.display = 'none';
+      loadMetrika();
+    }
+    function cookieDecline() {
+      localStorage.setItem('cookie_consent', 'declined');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    if (!localStorage.getItem('cookie_consent')) {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
+  </script>
 
   <script src="main.js"></script>
 </body>
