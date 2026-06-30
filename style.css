@@ -155,7 +155,7 @@ a { text-decoration: none; color: inherit; }
 .hero__photo { grid-area: photo; }
 .hero__cta-block {
   grid-area: cta;
-  justify-self: end;
+  justify-self: center;
   margin-top: 24px;
 }
 .hero__content {
