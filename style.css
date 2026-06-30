@@ -163,7 +163,7 @@ a { text-decoration: none; color: inherit; }
   letter-spacing: -.02em;
   margin-bottom: 22px;
   color: var(--text);
-  max-width: 430px;
+  max-width: 480px;
 }
 .accent { color: var(--green); }
 
