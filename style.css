@@ -162,6 +162,20 @@ a { text-decoration: none; color: inherit; }
   padding: 22px 80px;
   font-size: 18px;
   min-width: 400px;
+  animation: ctaPulse 2.4s ease-in-out infinite;
+}
+.hero__cta-block .hero__cta:hover {
+  animation-play-state: paused;
+}
+@keyframes ctaPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 20px rgba(26,107,85,.30);
+  }
+  50% {
+    transform: scale(1.035);
+    box-shadow: 0 8px 30px rgba(26,107,85,.45);
+  }
 }
 .hero__content {
   display: flex;
