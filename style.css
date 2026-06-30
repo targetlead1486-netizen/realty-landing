@@ -157,13 +157,13 @@ a { text-decoration: none; color: inherit; }
 .br-desktop { display: inline; }
 
 .hero__title {
-  font-size: clamp(32px, 3vw, 46px);
+  font-size: clamp(32px, 3.2vw, 48px);
   font-weight: 800;
   line-height: 1.22;
   letter-spacing: -.02em;
   margin-bottom: 22px;
   color: var(--text);
-  max-width: 600px;
+  max-width: 430px;
 }
 .accent { color: var(--green); }
 
@@ -201,7 +201,7 @@ a { text-decoration: none; color: inherit; }
 }
 .hero__photo-wrap {
   width: 100%;
-  max-width: 440px;
+  max-width: 520px;
   aspect-ratio: 4 / 5;
   border-radius: var(--radius-lg);
   overflow: hidden;
