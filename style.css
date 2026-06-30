@@ -156,7 +156,7 @@ a { text-decoration: none; color: inherit; }
 .hero__cta-block {
   grid-area: cta;
   justify-self: center;
-  margin-top: -34px;
+  margin-top: -60px;
 }
 .hero__cta-block .hero__cta {
   padding: 22px 80px;
